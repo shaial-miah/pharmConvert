@@ -1,0 +1,102 @@
+/* Defines colors, fonts, spacing */
+
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f5f5fa;
+    color: black;
+}
+
+/* Page header */
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #FFFF;
+    gap: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: solid;
+    border-width: 0.5px;
+    border-color: black;
+    height: 60px;
+}
+
+h1 {
+    font-size: 20px;
+    color: #190066;
+    font-weight: 50;
+    text-transform: uppercase
+}
+
+/* logo (pharmConvert) in header */
+
+.logo {
+    color: #190066;
+    font-weight: 1000;
+}
+
+/* navigation lists */
+
+nav ul {
+    display: flex;
+    gap: 50px;
+    font-size: 15px;
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+/* main element */
+
+main {
+    height: 100dvh;
+    margin-left: 50px;
+    margin-right: 50px;
+ 
+}
+
+.headingDescription {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* tools selection from home. */
+
+.tools {
+    height: 20rem;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolIcon {
+    height: 50px;
+    width: 50px;
+}
+
+.tools div {
+    border: solid;
+    border-color: rgb(186, 181, 181);
+    border-radius: 20px;
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    align-content: center;
+    padding: 10px;
+}
+
+.tools div p {
+    color: rgb(148, 150, 151);
+    font-size: 13px;
+}
+
+.tools div:hover {
+    border: solid;
+    border-color: black;
+    transition: 1s;
+    cursor: pointer;
+}
