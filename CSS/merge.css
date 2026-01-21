@@ -1,0 +1,34 @@
+
+/* file input section */
+#fileInput {
+    height: 10rem;
+    border-radius: 30px;
+    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+#uploadFileBtn {
+    width: 20rem;
+    height: 5rem;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background-color: #190066;
+    font-weight: 1000;
+}
+
+#uploadFileBtn:hover {
+    background-color: #5877f3;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#uploadFileTxt {
+    text-align: center;
+    font-weight: 5;
+    color: rgb(105, 102, 102);
+    margin-top: 10px;
+    font-size: 12px;
+}
