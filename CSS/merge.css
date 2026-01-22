@@ -2,11 +2,18 @@
 /* file input section */
 #fileInput {
     height: 10rem;
-    border-radius: 30px;
     margin-top: 20px;
     display: grid;
     justify-content: center;
     align-content: center;
+}
+
+/* Select PDF files button */
+
+#uploadFileBtn:hover {
+    background-color: #5877f3;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 #uploadFileBtn {
@@ -19,12 +26,6 @@
     font-weight: 1000;
 }
 
-#uploadFileBtn:hover {
-    background-color: #5877f3;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
 #uploadFileTxt {
     text-align: center;
     font-weight: 5;
@@ -32,3 +33,47 @@
     margin-top: 10px;
     font-size: 12px;
 }
+
+#fileDisplay {
+    margin-top: 20px;
+    width: 40rem;
+    display: block;
+    justify-self: center;
+    display: none;
+}
+
+#fileDisplay ul li {
+    margin-bottom: 10px;
+    list-style-type: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: #190066;
+    color: white;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mergeResetAddBtns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.mergeResetAddBtns button:hover {
+    background-color: black;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mergeResetAddBtns button {
+    width: 5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(127, 129, 129);
+};
+
