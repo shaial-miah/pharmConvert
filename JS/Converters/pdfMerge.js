@@ -6,6 +6,7 @@ const uploadFileTxt = document.getElementById("uploadFileTxt");
 const fileDisplay = document.getElementById("fileDisplay");
 const fileInputSection = document.getElementById("fileInput");
 const fileUnorderedList = document.getElementById("fileUnorderedList");
+const mergeButton = document.getElementById("mergeButton");
 
 // clicking the 'select pdf files' button will open file explorer.
 uploadButton.addEventListener("click", () => {
@@ -38,7 +39,7 @@ inputFile.addEventListener("change", () => {
 
         hideSelectPdfFilesBtn();
         renderFiles();
-    }
+    } 
 });
 
 // render files to browser to see which files have been selected
@@ -57,4 +58,38 @@ const renderFiles = () => {
         fileUnorderedList.appendChild(li);
     };
     
+};
+
+// pdf merge using library.
+
+mergeButton.addEventListener("click", async () => {
+
+    if (inputFile.files.length === 1) {
+        console.log('select another file')
+    } else {
+
+        const PDFDocument = PDFLib.PDFDocument; 
+        const mergedPdf = await PDFDocument.create();
+
+        for (const file of inputFile.files) {
+            const bytes = await file.arrayBuffer();
+            const pdf = await PDFDocument.load(bytes);
+            const pages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+            pages.forEach(page => mergedPdf.addPage(page));
+        }
+
+        const mergedBytes = await mergedPdf.save();
+        downloadPDF(mergedBytes, "merged.pdf");
+
+    }
+
+});
+
+
+function downloadPDF(bytes, filename) {
+    const blob = new Blob([bytes], { type: "application/pdf" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
 };
