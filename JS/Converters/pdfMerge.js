@@ -51,11 +51,28 @@ const renderFiles = () => {
     /* loops through fileArray and renders onto page */
     for (let i = 0; i < fileArray.length; i++) {
 
-        const li = document.createElement("li");
+        if (fileArray[i].includes(".pdf")) {
 
-        li.innerHTML = fileArray[i];
+            const li = document.createElement("li");
 
-        fileUnorderedList.appendChild(li);
+            li.innerHTML = fileArray[i];
+
+            li.style.backgroundColor = "green";
+
+            fileUnorderedList.appendChild(li);
+
+        } else {
+
+            const li = document.createElement("li");
+
+            li.innerHTML = fileArray[i] + ' (Please select PDF file)';
+
+            li.style.backgroundColor = "red";
+
+            fileUnorderedList.appendChild(li);
+
+        }
+
     };
     
 };
